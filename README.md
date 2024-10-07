@@ -6,4 +6,4 @@ Pour lancer l'api :
 - Dans Api/ exécuter la commande suivant (fastapi dev main.py)
 - Les urls s'affichent dans l'invite de commande
 
-- Sinon l'api est hébergée sur https://lucasdev.alwaysdata.net/docs#/
+Sinon l'api est hébergée sur https://lucasdev.alwaysdata.net/docs#/
