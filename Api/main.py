@@ -1,25 +1,22 @@
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.templating import Jinja2Templates
-from fastapi import Request
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
-templates = Jinja2Templates(directory="/")
+templates = Jinja2Templates(directory="../templates")
+app.mount("/static", StaticFiles(directory="../static"), name="static")
 
-@app.get("/ok")
+@app.get("/")
 def get_clock(request: Request):
-    return templates.TemplateResponse("templates/clock.html", {"request": request})
-
-
+    return templates.TemplateResponse("clock.html", {"request": request})
 
 @app.get("/Time/UTC")
 def readTime():
     dateString = datetime.utcnow().strftime("%d/%m/%Y")
     timeString = datetime.utcnow().strftime("%H:%M:%S")
     return {"Name": "UTC Time", "Date": dateString, "Time": timeString}
-
-
 
 @app.get("/Time/{timezone}")
 def get_timezone_time(timezone: str):
