@@ -36,6 +36,7 @@ But : Prise en main de la méthode de développement scrum.
     - Installer fastapi : (sudo) pip install "fastapi[standard]"
     - Être dans le dossier Api/ : cd path/Api
     - Exécuter la commande suivante : fastapi dev main.py
+    - Vous pouvez alors visualiser l'application sur l'adresse : http://127.0.0.1:8000/map
 
 
 5. Utilisation
