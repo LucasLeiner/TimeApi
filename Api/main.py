@@ -12,6 +12,10 @@ app.mount("/static", StaticFiles(directory="../static"), name="static")
 def get_clock(request: Request):
     return templates.TemplateResponse("clock.html", {"request": request})
 
+@app.get("/map")
+def get_clock(request: Request):
+    return templates.TemplateResponse("map.html", {"request": request})
+
 @app.get("/Time/UTC")
 def readTime():
     dateString = datetime.utcnow().strftime("%d/%m/%Y")
