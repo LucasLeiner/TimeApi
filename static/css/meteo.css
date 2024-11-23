@@ -1,0 +1,42 @@
+#weather-info {
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+#weather-info h2 {
+    text-align: center;
+    color: #1e90ff;
+    margin-bottom: 15px;
+}
+
+#weather-info p {
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+#weather-info strong {
+    color: #333;
+}
+
+#weather-info span {
+    color: #555;
+    font-weight: bold;
+}
+
+#weather-info span#temperature {
+    color: #ff6347;
+}
+
+#weather-info span#description {
+    color: #4682b4;
+}
+
+#weather-info span#humidity,
+#weather-info span#wind_speed {
+    color: #32cd32;
+}
