@@ -1,16 +1,22 @@
 # Documentation Technique - TimeApi
 
-But : Prise en main de la méthode de développement scrum.
+### Auteurs
+- **Nom et Prénom 1** : Lucas LEINER
+- **Nom et Prénom 2** : Bradley KISSOUNA
+- **Nom et Prénom 2** : Gaspar DA ROSA FRANCISCO
+- **Année** : 2024
+
+## But : Prise en main de la méthode de développement scrum.
 
 
-1. Introduction
+## 1. Introduction
 
     Cette application est un service web qui permet à l'utilisateur de récupérer la date et l'heure actuelles en fonction du fuseau horaire spécifié. Elle inclut également une interface web interactive avec une carte où les utilisateurs peuvent cliquer pour obtenir le fuseau horaire et l'heure correspondante à une position géographique donnée.
 
     L'application repose sur FastAPI pour la partie back-end (API REST) et Leaflet.js pour l'interface cartographique interactive. Elle utilise également l'API TimeZoneDB pour récupérer les fuseaux horaires basés sur les coordonnées géographiques.
 
 
-2. Architecture
+## 2. Architecture
 
     L'architecture est basée sur deux principaux composants :
 
@@ -18,7 +24,7 @@ But : Prise en main de la méthode de développement scrum.
     - Front-end (HTML/JavaScript) : Fournit une carte interactive qui utilise Leaflet pour permettre aux utilisateurs de sélectionner des points géographiques, puis récupère les fuseaux horaires à partir de l'API TimeZoneDB.
 
 
-3. Dépendances
+## 3. Dépendances
 
     - Python (Back-end) :
         - FastAPI : Framework web pour construire l'API.
@@ -29,7 +35,7 @@ But : Prise en main de la méthode de développement scrum.
         - Axios : Librairie pour les requêtes HTTP vers l'API TimeZoneDB.
 
 
-4. Installation
+## 4. Installation
 
     Pour lancer l'api :
 
@@ -39,7 +45,7 @@ But : Prise en main de la méthode de développement scrum.
     - Vous pouvez alors visualiser l'application sur l'adresse : http://127.0.0.1:8000/map
 
 
-5. Utilisation
+## 5. Utilisation
 
     - Accès à l'API FastAPI :
         - Normalement, vous verrez les urls affichés dans l'invite de commande. Sinon, vous pouvez consulter la documentation de l'API en cliquant sur le lien suivant : https://lucasdev.alwaysdata.net/docs#/
@@ -49,7 +55,7 @@ But : Prise en main de la méthode de développement scrum.
         - Clique sur la carte pour sélectionner un emplacement et obtenir le fuseau horaire correspondant.
 
 
-5. Améliorations futures possibles
+## 6. Améliorations futures possibles
 
     - Ajouter la gestion des erreurs pour des fuseaux horaires plus précis en cas de zones ambiguës.
     - Ajouter une option pour récupérer l'heure au format 12 heures (AM/PM).
