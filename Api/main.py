@@ -9,11 +9,7 @@ import requests
 app = FastAPI()
 templates = Jinja2Templates(directory="../templates")
 app.mount("/static", StaticFiles(directory="../static"), name="static")
-"""
-@app.get("/")
-def get_clock(request: Request):
-    return templates.TemplateResponse("clock.html", {"request": request})
-"""
+
 @app.get("/map")
 def get_clock(request: Request):
     return templates.TemplateResponse("map.html", {"request": request})
