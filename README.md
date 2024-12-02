@@ -11,7 +11,7 @@
 
 ## 1. Introduction
 
-    Cette application est un service web qui permet à l'utilisateur de récupérer la date et l'heure actuelles en fonction du fuseau horaire spécifié. Elle inclut également une interface web interactive avec une carte où les utilisateurs peuvent cliquer pour obtenir le fuseau horaire et l'heure correspondante à une position géographique donnée.
+    Cette application est un service web qui permet à l'utilisateur de récupérer la date et l'heure actuelles en fonction du fuseau horaire spécifié. Elle inclut également une interface web interactive avec une carte où les utilisateurs peuvent cliquer pour obtenir le fuseau horaire et l'heure correspondante à une position géographique donnée, ainsi que leurs informations météreologiques.
 
     L'application repose sur FastAPI pour la partie back-end (API REST) et Leaflet.js pour l'interface cartographique interactive. Elle utilise également l'API TimeZoneDB pour récupérer les fuseaux horaires basés sur les coordonnées géographiques.
 
