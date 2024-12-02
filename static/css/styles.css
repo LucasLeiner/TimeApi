@@ -1,18 +1,27 @@
 #map {
     height: 500px;
-    width: 100%;
+    width: 50%;
+    border-radius: 12px;
+    box-shadow:  20px 20px 60px #d9d9d9,
+                 -20px -20px 60px #ffffff;
 }
 
-#timezone-info, #horloge {
-    margin-top: 20px;
+.fuseau {
+    text-align: center;
+}
+
+.map-clock-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 /* Styles pour Clock 1 */
 .clock {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     background: linear-gradient(145deg, #e6e6e6, #ffffff);
     box-shadow:  20px 20px 60px #d9d9d9,
