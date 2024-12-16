@@ -7,8 +7,12 @@
     margin-top: 20px;
 }
 
+.map-clock-container {
+    margin: 20px;
+}
 
-/* Styles pour Clock 1 */
+
+/* Styles pour Clock 1 
 .clock {
     position: relative;
     width: 300px;
@@ -60,4 +64,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 4;
+}
+*/
+
+button {
+    background-color: #008CBA;
+    margin: 20px auto;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: block;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

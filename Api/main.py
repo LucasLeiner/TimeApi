@@ -73,25 +73,19 @@ class DownloadRequest(BaseModel):
 
 @app.post("/download/csv")
 def generate_csv(download_request: DownloadRequest):
-    # Créer un fichier CSV en mémoire
     csv_buffer = StringIO()
     writer = csv.writer(csv_buffer)
 
-    # Ajouter les en-têtes
     writer.writerow(["Type", "Clé", "Valeur"])
 
-    # Ajouter les données météo
     for key, value in download_request.weather.items():
         writer.writerow(["Météo", key, value])
 
-    # Ajouter les données de fuseau horaire
     for key, value in download_request.timezone.items():
         writer.writerow(["Fuseau Horaire", key, value])
 
-    # Réinitialiser le curseur du buffer
     csv_buffer.seek(0)
 
-    # Retourner le fichier CSV en tant que réponse
     return StreamingResponse(
         csv_buffer,
         media_type="text/csv",

@@ -8,7 +8,7 @@
     font-family: Arial, sans-serif;
 }
 
-#weather-info h2 {
+h2 {
     text-align: center;
     color: #1e90ff;
     margin-bottom: 15px;
@@ -39,4 +39,35 @@
 #weather-info span#humidity,
 #weather-info span#wind_speed {
     color: #32cd32;
+}
+
+#timezone-info, #weather-info {
+    align-self: stretch;
+}
+
+/* Conteneur pour les informations */
+#info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Styles pour les divs individuels */
+#timezone-container, #weather-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    align-self: center;
+    text-align: center;
+}
+
+#timezone-container {
+    margin-left: 200px;
 }

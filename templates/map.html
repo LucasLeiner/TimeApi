@@ -13,26 +13,32 @@
         <h1>Carte interactive - Fuseau horaire</h1>
         <div class="map-clock-container">
             <div id="map"></div>
+            <!--
             <div class="clock">
                 <div class="hour-hand"></div>
                 <div class="minute-hand"></div>
                 <div class="second-hand"></div>
             </div>
+            -->
         </div>
         
-        <div id="timezone-info">
-            <p><strong>Fuseau horaire :</strong> <span id="timezone">Aucun fuseau sélectionné</span></p>
+        <div id="info-container">
+            <div id="timezone-container">
+                <h2>Fuseau horaire</h2>
+                <div id="timezone-info">
+                    <p><strong>Localisation :</strong> <span id="timezone">Aucun fuseau sélectionné</span></p>
+                </div>
+                <div id="horloge"><strong>Heure actuelle :</strong> <span id="heureActuelle">00:00:00</span></div>
+            </div>
+            <div id="weather-info">
+                <h2>Informations météo</h2>
+                <p><strong>Température :</strong> <span id="temperature">N/A</span>°C</p>
+                <p><strong>Description :</strong> <span id="description">N/A</span></p>
+                <p><strong>Humidité :</strong> <span id="humidity">N/A</span>%</p>
+                <p><strong>Vitesse du vent :</strong> <span id="wind_speed">N/A</span> m/s</p>
+            </div>
         </div>
-        <div id="horloge"><strong>Heure actuelle :</strong> <span id="heureActuelle">00:00:00</span></div>
-
-        <div id="weather-info">
-            <h2>Informations météo</h2>
-            <p><strong>Température :</strong> <span id="temperature">N/A</span>°C</p>
-            <p><strong>Description :</strong> <span id="description">N/A</span></p>
-            <p><strong>Humidité :</strong> <span id="humidity">N/A</span>%</p>
-            <p><strong>Vitesse du vent :</strong> <span id="wind_speed">N/A</span> m/s</p>
-        </div>
-
+        
         <button id="download-button" onclick="downloadData()">Télécharger les données</button>
 
 
