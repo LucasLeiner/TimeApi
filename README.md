@@ -34,7 +34,7 @@ But : Prise en main de la méthode de développement scrum.
     Pour lancer l'api :
 
     - Installer fastapi : (sudo) pip install "fastapi[standard]"
-    - Être dans le dossier Api/ : cd path/Api
+    - Être dans le dossier Api/ : cd Api/
     - Exécuter la commande suivante : fastapi dev main.py
 
 
