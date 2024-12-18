@@ -3,6 +3,8 @@ from zoneinfo import ZoneInfo
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+import logging
+import requests
 
 app = FastAPI()
 templates = Jinja2Templates(directory="../templates")
@@ -10,11 +12,7 @@ app.mount("/static", StaticFiles(directory="../static"), name="static")
 
 @app.get("/")
 def get_clock(request: Request):
-    return templates.TemplateResponse("clock.html", {"request": request})
-
-@app.get("/map")
-def get_clock(request: Request):
-    return templates.TemplateResponse("map.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.get("/Time/UTC")
 def readTime():
@@ -37,4 +35,3 @@ def get_timezone_time(timezone: str):
     time_string = now_in_tz.strftime("%H:%M:%S")
 
     return {"timezone": formatted_timezone, "date": date_string, "time": time_string}
-

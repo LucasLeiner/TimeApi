@@ -20,5 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         getTimezoneFromLatLng(lat, lng);
+        getWeather(lat, lng);
     });
 });

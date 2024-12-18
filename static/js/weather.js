@@ -32,3 +32,31 @@ function getWeather(lat, lng) {
             document.getElementById('wind_speed').textContent = "Erreur";
         });
 }
+
+
+/**
+ * Retourne un objet contenant les informations météo actuelles.
+ * L'objet contient les propriétés suivantes :
+ * - temperature : La température en degrés Celsius.
+ * - description : La description des conditions météorologiques.
+ * - humidity : L'humidité relative en pourcentage.
+ * - windSpeed : La vitesse du vent en mètres par seconde.
+ * @returns {Object} L'objet contenant les informations météo.
+ */
+function exportWeather() {
+    const temperature = document.getElementById('temperature').textContent;
+    const description = document.getElementById('description').textContent;
+    const humidity = document.getElementById('humidity').textContent;
+    const windSpeed = document.getElementById('wind_speed').textContent;
+
+    return {
+        temperature,
+        description,
+        humidity,
+        windSpeed,
+    };
+}
+
+document.getElementById('export-button').addEventListener('click', function() {
+    console.log("Export des données météo");
+});

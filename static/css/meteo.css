@@ -6,12 +6,14 @@
     max-width: 400px;
     margin: 20px auto;
     font-family: Arial, sans-serif;
+    position: relative; /* Pour positionner le bouton */
 }
 
 #weather-info h2 {
     text-align: center;
     color: #1e90ff;
     margin-bottom: 15px;
+    margin-top: 0; /* Réduit l'espace au-dessus */
 }
 
 #weather-info p {
@@ -39,4 +41,22 @@
 #weather-info span#humidity,
 #weather-info span#wind_speed {
     color: #32cd32;
+}
+
+#export-button {
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 150px;
+    background: #ffffff;
+    box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+    position: absolute; /* Pour le positionnement */
+    top: 10px; /* Espacement vertical du bouton */
+    right: 10px; /* Espacement horizontal du bouton */
+}
+
+#export-button img {
+    width: 70%;
+    height: auto;
 }

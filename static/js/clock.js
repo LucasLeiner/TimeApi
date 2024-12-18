@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateClock() {
         seconds++;
         if (seconds === 60) {
-            seconds = 0;
             minutes++;
         }
         if (minutes === 60) {
@@ -61,15 +60,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (hours === 24) {
             hours = 0;
         }
-
-        const secondAngle = (seconds * 6) + (timezoneOffset / 1000);
-        const minuteAngle = ((minutes + seconds / 60) * 6) + (timezoneOffset / 1000);
-        const hourAngle = ((hours % 12 + minutes / 60) * 30) + (timezoneOffset / 1000);
-
+    
+        const secondAngle = seconds * 6;
+        const minuteAngle = minutes * 6 + seconds * 0.1;
+        const hourAngle = (hours % 12) * 30 + minutes * 0.5;
+    
         document.querySelector('.second-hand').style.transform = `translateX(-50%) rotate(${secondAngle}deg)`;
         document.querySelector('.minute-hand').style.transform = `translateX(-50%) rotate(${minuteAngle}deg)`;
         document.querySelector('.hour-hand').style.transform = `translateX(-50%) rotate(${hourAngle}deg)`;
     }
+    
 
     /**
      * Mets à jour l'horloge en fonction du fuseau horaire sélectionné.
@@ -123,6 +123,24 @@ document.addEventListener("DOMContentLoaded", function () {
                     horlogeElement.textContent = "Erreur lors de la récupération de l'heure.";
                 }
             });
+    }
+
+    /**
+     * Retourne un objet contenant l'heure actuelle (UTC) et le décalage horaire du fuseau.
+     * L'objet contient les propriétés suivantes :
+     * - hours : L'heure actuelle (UTC).
+     * - minutes : Les minutes actuelles (UTC).
+     * - seconds : Les secondes actuelles (UTC).
+     * - timezoneOffset : Le décalage horaire du fuseau horaire actuel.
+     * @returns {Object} L'objet contenant l'heure actuelle et le décalage horaire.
+     */
+    function exportTime() {
+        return {
+            hours: hours,
+            minutes: minutes,
+            seconds: seconds,
+            timezoneOffset: timezoneOffset,
+        };
     }
     
     startClock();
