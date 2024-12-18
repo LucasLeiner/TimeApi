@@ -25,8 +25,8 @@
         </div>
     </div>
     <div id="weather-info">
-        <button id="export-button">
-            <img src="/static/images/export.png" alt="Export">
+        <button id="export-button" onclick="downloadData()">
+            <img src="/static/images/export.png" alt="Exporter les données météo">
         </button>
         <h2>Informations météo</h2>
         <p><strong>Température :</strong> <span id="temperature">N/A</span></p>
@@ -42,5 +42,6 @@
     <script src="/static/js/map.js"></script>
     <script src="/static/js/timezone.js"></script>
     <script src="/static/js/weather.js"></script>
+    <script src="/static/js/scripts.js"></script>
 </body>
 </html>

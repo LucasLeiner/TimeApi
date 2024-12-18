@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
             timezoneOffset: timezoneOffset,
         };
     }
+    window.exportTime = exportTime;
     
     startClock();
 

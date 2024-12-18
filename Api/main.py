@@ -5,6 +5,11 @@ from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import logging
 import requests
+from fastapi.responses import StreamingResponse
+import csv
+from io import StringIO
+from pydantic import BaseModel
+from typing import Dict
 
 app = FastAPI()
 templates = Jinja2Templates(directory="../templates")
@@ -35,3 +40,29 @@ def get_timezone_time(timezone: str):
     time_string = now_in_tz.strftime("%H:%M:%S")
 
     return {"timezone": formatted_timezone, "date": date_string, "time": time_string}
+
+
+class DownloadRequest(BaseModel):
+    weather: Dict[str, str]
+    timezone: Dict[str, str]
+
+@app.post("/download/csv")
+def generate_csv(download_request: DownloadRequest):
+    csv_buffer = StringIO()
+    writer = csv.writer(csv_buffer)
+
+    writer.writerow(["Type", "Clé", "Valeur"])
+
+    for key, value in download_request.weather.items():
+        writer.writerow(["Météo", key, value])
+
+    for key, value in download_request.timezone.items():
+        writer.writerow(["Fuseau Horaire", key, value])
+
+    csv_buffer.seek(0)
+
+    return StreamingResponse(
+        csv_buffer,
+        media_type="text/csv",
+        headers={"Content-Disposition": "attachment; filename=data.csv"}
+    )
