@@ -10,9 +10,9 @@ nav:
   - Home: index.md
   - About: about.md
   - Documentation:
-      - Introduction: docs/introduction.md
-      - Setup Guide: docs/setup.md
-      - FAQ: docs/faq.md
+      # - Introduction: docs/introduction.md
+      - Setup Guide: README.md
+      # - FAQ: docs/faq.md
 
 search:
   language: en
