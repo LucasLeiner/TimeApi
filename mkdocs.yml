@@ -1,0 +1,19 @@
+site_name: My Documentation
+site_description: A description of your documentation site.
+
+# Theme configuration
+theme:
+  name: material
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - About: about.md
+  - Documentation:
+      - Introduction: docs/introduction.md
+      - Setup Guide: docs/setup.md
+      - FAQ: docs/faq.md
+
+search:
+  language: en
+  max_results: 10
