@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 import logging
-import requests
+# import requests
 from fastapi.responses import StreamingResponse
 import csv
 from io import StringIO
@@ -57,7 +57,7 @@ def generate_csv(download_request: DownloadRequest):
         writer.writerow(["Météo", key, value])
 
     for key, value in download_request.timezone.items():
-        writer.writerow(["Fuseau Horaire", key, value])
+        writer.writerow(["Fuseau / Horaire", key, value])
 
     csv_buffer.seek(0)
 

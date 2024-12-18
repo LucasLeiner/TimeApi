@@ -1,33 +1,20 @@
 function downloadData() {
-    // Récupérer les données météo
     const weatherData = {
         temperature: document.getElementById('temperature').textContent,
         description: document.getElementById('description').textContent,
         humidity: document.getElementById('humidity').textContent,
         wind_speed: document.getElementById('wind_speed').textContent
     };
-    console.log("Données météo à exporter :", weatherData);
 
-    // Récupérer les données de fuseau horaire
     const timezoneData = {
-        timezone: document.getElementById('timezone').textContent
-    };
-    console.log("Données de fuseau horaire à exporter :", timezoneData);
-
-    // Récupérer l'heure actuelle
-    const timeData = exportTime();
-    console.log("Données d'heure à exporter :", timeData);
-
-    // Fusionner toutes les données
-    const exportData = {
-        weather: weatherData,
-        timezone: timezoneData,
-        time: timeData
+        timezone: document.getElementById('timezone').textContent,
+        current_time: document.getElementById('heureActuelle').textContent
     };
 
     // Envoyer les données au serveur pour créer un fichier CSV
-    axios.post('/download/csv', exportData, { responseType: 'blob' })
+    axios.post('/download/csv', { weather: weatherData, timezone: timezoneData }, { responseType: 'blob' })
         .then(function(response) {
+            // Créer un lien pour télécharger le fichier
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
             link.href = url;

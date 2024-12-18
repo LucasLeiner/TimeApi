@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateClock();
         }).catch(error => {
             console.log(error);
-            document.getElementById("horloge").textContent = "Erreur de récupération de l'heure.";
+            document.getElementsById("heureActuelle").textContent = "Erreur de récupération de l'heure.";
         });
     }
 
@@ -68,6 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.second-hand').style.transform = `translateX(-50%) rotate(${secondAngle}deg)`;
         document.querySelector('.minute-hand').style.transform = `translateX(-50%) rotate(${minuteAngle}deg)`;
         document.querySelector('.hour-hand').style.transform = `translateX(-50%) rotate(${hourAngle}deg)`;
+
+        const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        document.getElementById("heureActuelle").innerHTML = formattedTime;
     }
     
 
@@ -110,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     updateClock();
                 } else {
                     console.error("Le format de l'heure est invalide :", time);
-                    const horlogeElement = document.getElementById("horloge");
+                    const horlogeElement = document.getElementById("heureActuelle");
                     if (horlogeElement) {
                         horlogeElement.textContent = "Erreur format heure.";
                     }
@@ -118,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => {
                 console.error("Erreur lors de la récupération de l'heure pour le fuseau horaire sélectionné : ", error);
-                const horlogeElement = document.getElementById("horloge");
+                const horlogeElement = document.getElementById("heureActuelle");
                 if (horlogeElement) {
                     horlogeElement.textContent = "Erreur lors de la récupération de l'heure.";
                 }
