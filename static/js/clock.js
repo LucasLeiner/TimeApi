@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let hours, minutes, seconds, timezoneOffset = 0;
+    let hours, minutes, seconds, timezoneOffset, secondsDisplay = 0;
     let intervalId;
 
     /**
@@ -50,15 +50,20 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     function updateClock() {
         seconds++;
-        if (seconds === 60) {
+        if (seconds % 60 === 0) {
             minutes++;
         }
-        if (minutes === 60) {
+        if (minutes % 60 === 0) {
             minutes = 0;
             hours++;
         }
-        if (hours === 24) {
+        if (hours % 24 === 0) {
             hours = 0;
+        }
+
+        secondsDisplay = seconds;
+        if (seconds >= 60) {
+            secondsDisplay = seconds % 60;
         }
     
         const secondAngle = seconds * 6;
@@ -69,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector('.minute-hand').style.transform = `translateX(-50%) rotate(${minuteAngle}deg)`;
         document.querySelector('.hour-hand').style.transform = `translateX(-50%) rotate(${hourAngle}deg)`;
 
-        const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secondsDisplay.toString().padStart(2, '0')}`;
 
         document.getElementById("heureActuelle").innerHTML = formattedTime;
     }
