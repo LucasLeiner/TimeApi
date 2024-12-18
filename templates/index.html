@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mondial Time</title>
+    <link rel="icon" type="image/x-icon" href="/static/images/clock.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/meteo.css">
+</head>
+<body>
+    <h1>Carte interactive - Fuseau horaire</h1>
+
+    <div class="map-clock-container">
+        <div id="map"></div>
+
+        <div class="clock-fuseau-container">
+            <div class="clock">
+                <div class="hour-hand"></div>
+                <div class="minute-hand"></div>
+                <div class="second-hand"></div>
+            </div>
+            <p class="fuseau"><strong>Fuseau horaire :</strong> <span id="timezone">Europe-London</span></p>
+        </div>
+    </div>
+    <div id="weather-info">
+        <button id="export-button">
+            <img src="/static/images/export.png" alt="Export">
+        </button>
+        <h2>Informations météo</h2>
+        <p><strong>Température :</strong> <span id="temperature">N/A</span></p>
+        <p><strong>Description :</strong> <span id="description">N/A</span></p>
+        <p><strong>Humidité :</strong> <span id="humidity">N/A</span></p>
+        <p><strong>Vitesse du vent :</strong> <span id="wind_speed">N/A</span></p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script src="/static/js/clock.js"></script>
+    <script src="/static/js/map.js"></script>
+    <script src="/static/js/timezone.js"></script>
+    <script src="/static/js/weather.js"></script>
+</body>
+</html>
