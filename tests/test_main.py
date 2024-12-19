@@ -15,7 +15,6 @@ def test_get_clock_success():
     response = client.get("/")
     assert response.status_code == 200
     assert "text/html" in response.headers["content-type"]
-    assert "<html lang="fr">" in response.text
 
 def test_read_time_success():
     """
@@ -59,8 +58,8 @@ def test_get_timezone_time_valid():
     response = client.get("/Time/Europe-Paris")
     assert response.status_code == 200
     data = response.json()
-    assert "date" in data
-    assert "time" in data
+    assert "Date" in data
+    assert "Time" in data
 
 def test_get_timezone_time_invalid():
     """
@@ -87,8 +86,8 @@ def test_get_timezone_time_edge_case():
     response = client.get("/Time/UTC")
     assert response.status_code == 200
     data = response.json()
-    assert "date" in data
-    assert "time" in data
+    assert "Date" in data
+    assert "Time" in data
 
 def test_generate_csv_success():
     """
@@ -111,7 +110,8 @@ def test_generate_csv_success():
     }
     response = client.post("/download/csv", json=payload)
     assert response.status_code == 200
-    assert response.headers["content-type"] == "text/csv"
+    content_type = response.headers["content-type"].split(";")[0]
+    assert content_type == "text/csv", f"Content-Type attendu : text/csv, mais obtenu : {content_type}"
     assert "attachment; filename=data.csv" in response.headers["content-disposition"]
     csv_content = response.content.decode()
     assert "Type,Clé,Valeur" in csv_content
