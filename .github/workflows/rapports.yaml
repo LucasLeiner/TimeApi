@@ -27,24 +27,19 @@ jobs:
           pip install pytest-html
           pytest --html=reports/test_report.html
 
-      - name: Commit and push the HTML report to gh-pages
+      - name: Commit and push the HTML report to main
         run: |
-          # Setup Git
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
           git stash || echo "No local changes to stash"
-     
           git fetch --all
-    
-          git checkout gh-pages || git checkout --orphan gh-pages
-
-          git pull origin gh-pages --rebase
+          git checkout main
 
           cp reports/test_report.html docs/results.html
           
           git add docs/results.html
           git commit -m "Ajout du rapport de test HTML"
-          git push origin gh-pages
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

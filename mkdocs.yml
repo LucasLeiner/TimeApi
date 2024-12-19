@@ -10,8 +10,8 @@ nav:
   - Home: index.md
   - About: about.md
   - Documentation:
-      - Introduction: docs/introduction.md
-      - Setup Guide: docs/setup.md
-      - Test Results: docs/results.html
+      - Introduction: introduction.md
+      - Setup Guide: setup.md
+      - Test Results: results.html
 
 docs_dir: docs
