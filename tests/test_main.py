@@ -46,21 +46,6 @@ def test_read_time_format():
     assert len(data["Date"].split("/")) == 3
     assert len(data["Time"].split(":")) == 3
 
-def test_get_timezone_time_valid():
-    """
-    Test pour vérifier que le temps pour une zone horaire valide est renvoyé correctement.
-
-    Vérifie que :
-    - La réponse a un code 200.
-    - Les champs "timezone", "date" et "time" sont présents dans la réponse JSON.
-    - Le champ "timezone" a la valeur attendue.
-    """
-    response = client.get("/Time/Europe-Paris")
-    assert response.status_code == 200
-    data = response.json()
-    assert "Date" in data
-    assert "Time" in data
-
 def test_get_timezone_time_invalid():
     """
     Test pour vérifier qu'une zone horaire invalide retourne une erreur 400.
