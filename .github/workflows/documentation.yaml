@@ -1,9 +1,10 @@
 name: Documentation
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Rapports Tests"]
+    types:
+      - completed
 
 jobs:
   build-and-deploy:
