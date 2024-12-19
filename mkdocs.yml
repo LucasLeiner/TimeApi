@@ -11,7 +11,7 @@ nav:
   - About: about.md
   - Documentation:
       - Introduction: docs/introduction.md
-      - Setup Guide: docs/setup.md
+      - Setup Guide: README.md
       - Test Results: docs/results.html
 
 docs_dir: docs
