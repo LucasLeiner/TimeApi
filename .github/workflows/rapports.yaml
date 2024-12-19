@@ -21,12 +21,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Tests with pytest
+      - name: Run Tests with pytest and generate HTML report
         run: |
-          pytest --junitxml=reports/test_report.xml
+          # Installe pytest-html pour générer un rapport HTML
+          pip install pytest-html
+          pytest --html=reports/test_report.html
 
-      - name: Upload Test Report
-        uses: actions/upload-artifact@v3
-        with:
-            name: junit-test-report
-            path: reports/test_report.xml
+      - name: Commit and push the HTML report to gh-pages
+        run: |
+          # Setup Git
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          
+          # Checkout gh-pages branch and copy the report to it
+          git fetch origin gh-pages
+          git checkout gh-pages
+          cp reports/test_report.html reports/index.html
+
+          # Commit and push the updated report
+          git add reports/index.html
+          git commit -m "Ajout du rapport de test HTML"
+          git push origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
