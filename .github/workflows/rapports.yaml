@@ -25,7 +25,13 @@ jobs:
         run: |
           # Installe pytest-html pour générer un rapport HTML
           pip install pytest-html
-          pytest --html=reports/test_report.html
+          pytest --html=reports/test_report.html --self-contained-html
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v3
+        with:
+            name: test-report
+            path: reports/test_report.html
 
       - name: Commit and push the HTML report to main
         run: |
