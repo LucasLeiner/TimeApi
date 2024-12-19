@@ -7,11 +7,8 @@ theme:
 
 # Navigation structure
 nav:
-  - Home: index.md
-  - About: about.md
   - Documentation:
-      - Introduction: introduction.md
-      - Setup Guide: setup.md
-      - Test Results: results.html
+      - Setup Guide: SETUP.md
+      - Test Results: RESULTS.html
 
 docs_dir: docs
