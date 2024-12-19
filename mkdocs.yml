@@ -5,6 +5,9 @@ site_description: A description of your documentation site.
 theme:
   name: material
 
+extra_css:
+  - styles/extra.css
+
 # Navigation structure
 nav:
   - Home: index.md
