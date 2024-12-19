@@ -3,3 +3,4 @@ fastapi
 pytest-html
 jinja2
 httpx
+pytz
