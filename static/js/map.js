@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
     map.on('click', function (e) {
         var lat = e.latlng.lat;
         var lng = e.latlng.lng;
-        console.log('Clic sur la carte : lat=' + lat + ', lng=' + lng);
 
         if (marker) {
             marker.setLatLng([lat, lng]);

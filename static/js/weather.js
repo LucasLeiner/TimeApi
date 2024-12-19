@@ -6,33 +6,48 @@
  * @param {number} lng - La longitude.
  */
 function getWeather(lat, lng) {
-    console.log("Appel à getWeather avec les coordonnées :", lat, lng);
-    
-    // URL de l'API OpenWeatherMap
-    const apiKey = "9fb836bb8dd76bba9c246a52993a9ffd";
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}&units=metric`;
-    
-    axios.get(url)
-        .then(function(response) {
-            const data = response.data;
-
-            // Mise à jour des éléments HTML avec les données météo
-            document.getElementById('temperature').textContent = `${data.main.temp} °C`;
-            document.getElementById('description').textContent = data.weather[0].description;
-            document.getElementById('humidity').textContent = `${data.main.humidity} %`;
-            document.getElementById('wind_speed').textContent = `${data.wind.speed} m/s`;
+    fetch('/static/config.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Impossible de charger le fichier config.json");
+            }
+            return response.json();
         })
-        .catch(function(error) {
-            console.error("Erreur lors de la récupération des données météo :", error);
-            
+        .then(config => {
+            const apiKey = config.weatherApiKey;
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${apiKey}&units=metric`;
+
+            axios.get(url)
+                .then(function(response) {
+                    const data = response.data;
+
+                    // Mise à jour des éléments HTML avec les données météo
+                    document.getElementById('temperature').textContent = `${data.main.temp} °C`;
+                    document.getElementById('description').textContent = data.weather[0].description;
+                    document.getElementById('humidity').textContent = `${data.main.humidity} %`;
+                    document.getElementById('wind_speed').textContent = `${data.wind.speed} m/s`;
+                })
+                .catch(function(error) {
+                    console.error("Erreur lors de la récupération des données météo :", error);
+
+                    // Mise à jour des éléments HTML en cas d'erreur
+                    document.getElementById('temperature').textContent = "Erreur";
+                    document.getElementById('description').textContent = "Erreur";
+                    document.getElementById('humidity').textContent = "Erreur";
+                    document.getElementById('wind_speed').textContent = "Erreur";
+                });
+        })
+        .catch(error => {
+            console.error("Erreur lors de la récupération de la clé API météo :", error);
+
             // Mise à jour des éléments HTML en cas d'erreur
-            document.getElementById('temperature').textContent = "Erreur";
-            document.getElementById('description').textContent = "Erreur";
-            document.getElementById('humidity').textContent = "Erreur";
-            document.getElementById('wind_speed').textContent = "Erreur";
+            document.getElementById('temperature').textContent = "Erreur API";
+            document.getElementById('description').textContent = "Erreur API";
+            document.getElementById('humidity').textContent = "Erreur API";
+            document.getElementById('wind_speed').textContent = "Erreur API";
         });
 }
-
 
 /**
  * Retourne un objet contenant les informations météo actuelles.
@@ -56,7 +71,3 @@ function exportWeather() {
         windSpeed,
     };
 }
-
-document.getElementById('export-button').addEventListener('click', function() {
-    console.log("Export des données météo");
-});
