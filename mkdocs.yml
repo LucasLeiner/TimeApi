@@ -1,7 +1,8 @@
 site_name: My Documentation
-site_description: A description of your documentation site.
+site_description: Our documentation site to get 20/20 :).
 
-# Theme configuration
+# Configuration
+site_dir: site
 theme:
   name: material
 
