@@ -12,17 +12,19 @@
       
       
       
+        <link rel="next" href="../test_report.html">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>My Documentation</title>
+        <title>Setup Guide - My Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
       
 
@@ -41,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#documentation-technique-timeapi" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="My Documentation" class="md-header__button md-logo" aria-label="My Documentation" data-md-component="logo">
+    <a href=".." title="My Documentation" class="md-header__button md-logo" aria-label="My Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Setup Guide
             
           </span>
         </div>
@@ -166,7 +173,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="My Documentation" class="md-nav__button md-logo" aria-label="My Documentation" data-md-component="logo">
+    <a href=".." title="My Documentation" class="md-nav__button md-logo" aria-label="My Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -184,7 +191,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.md" class="md-nav__link">
+      <a href="../index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -204,7 +211,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/about.md" class="md-nav__link">
+      <a href="../about.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -221,17 +228,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -245,7 +254,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Documentation
@@ -259,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/introduction.md" class="md-nav__link">
+      <a href="../introduction.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -277,10 +286,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/setup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -289,6 +307,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -301,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/test_report.html" class="md-nav__link">
+      <a href="../test_report.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -339,6 +358,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -350,8 +371,93 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="documentation-technique-timeapi">Documentation Technique - TimeApi</h1>
+<p>But : Prise en main de la méthode de développement scrum.</p>
+<ol>
+<li>
+<p>Introduction</p>
+<p>Cette application est un service web qui permet à l'utilisateur de récupérer la date et l'heure actuelles en fonction du fuseau horaire spécifié. Elle inclut également une interface web interactive avec une carte où les utilisateurs peuvent cliquer pour obtenir le fuseau horaire et l'heure correspondante à une position géographique donnée.</p>
+<p>L'application repose sur FastAPI pour la partie back-end (API REST) et Leaflet.js pour l'interface cartographique interactive. Elle utilise également l'API TimeZoneDB pour récupérer les fuseaux horaires basés sur les coordonnées géographiques.</p>
+</li>
+<li>
+<p>Architecture</p>
+<p>L'architecture est basée sur deux principaux composants :</p>
+<ul>
+<li>Back-end (API FastAPI) : Expose des routes pour obtenir la date et l'heure en fonction du fuseau horaire.</li>
+<li>Front-end (HTML/JavaScript) : Fournit une carte interactive qui utilise Leaflet pour permettre aux utilisateurs de sélectionner des points géographiques, puis récupère les fuseaux horaires à partir de l'API TimeZoneDB.</li>
+</ul>
+</li>
+<li>
+<p>Dépendances</p>
+<ul>
+<li>
+<p>Python (Back-end) :</p>
+<ul>
+<li>FastAPI : Framework web pour construire l'API.</li>
+<li>ZoneInfo : Gestion des fuseaux horaires.</li>
+</ul>
+</li>
+<li>
+<p>JavaScript (Front-end) :</p>
+<ul>
+<li>Leaflet.js : Librairie de cartographie pour gérer la carte interactive.</li>
+<li>Axios : Librairie pour les requêtes HTTP vers l'API TimeZoneDB.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Installation</p>
+<p>Pour lancer l'api :</p>
+<ul>
+<li>Installer fastapi : (sudo) pip install "fastapi[standard]"</li>
+<li>Être dans le dossier TimeApi/</li>
+<li>Exécuter la commande suivante : fastapi dev Api/main.py</li>
+</ul>
+</li>
+<li>
+<p>Utilisation</p>
+<ul>
+<li>
+<p>Accès à l'API FastAPI :</p>
+<ul>
+<li>Normalement, vous verrez les urls affichés dans l'invite de commande. Sinon, vous pouvez consulter la documentation de l'API en cliquant sur le lien suivant : https://lucasdev.alwaysdata.net/docs#/</li>
+</ul>
+</li>
+<li>
+<p>Accès à l'interface de la carte :</p>
+<ul>
+<li>Ouvre le fichier HTML dans un navigateur.</li>
+<li>Clique sur la carte pour sélectionner un emplacement et obtenir le fuseau horaire correspondant.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Améliorations futures possibles</p>
+<ul>
+<li>Ajouter la gestion des erreurs pour des fuseaux horaires plus précis en cas de zones ambiguës.</li>
+<li>Ajouter une option pour récupérer l'heure au format 12 heures (AM/PM).</li>
+<li>Permettre une sélection multiple de fuseaux horaires et la comparaison d'heures.</li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -385,10 +491,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
