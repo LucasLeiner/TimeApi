@@ -1,10 +1,9 @@
 from datetime import datetime
-from zoneinfo import ZoneInfo
+import pytz
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
-import logging
-# import requests
+import logging  
 from fastapi.responses import StreamingResponse
 import csv
 from io import StringIO
@@ -29,9 +28,8 @@ def readTime():
 def get_timezone_time(timezone: str):
     # Remplacer les "-" par "/"
     formatted_timezone = timezone.replace("-", "/")
-    
     try:
-        tz = ZoneInfo(formatted_timezone)
+        tz = pytz.timezone(formatted_timezone)
     except Exception:
         raise HTTPException(status_code=400, detail="Fuseau horaire invalide")
 
