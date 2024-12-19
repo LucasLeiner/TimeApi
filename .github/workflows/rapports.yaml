@@ -39,6 +39,6 @@ jobs:
           
           git add reports/index.html
           git commit -m "Ajout du rapport de test HTML"
-          git push origin gh-pages
+          git push https://github.com/${{ github.repository }} gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
