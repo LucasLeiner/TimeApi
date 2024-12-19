@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 const responseData = JSON.parse(data.contents);
-                console.log("Réponse de l'API : ", responseData);
 
                 if (!responseData || !responseData.time) {
                     console.error("L'heure n'est pas disponible ou a un format invalide.");
