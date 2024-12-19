@@ -37,6 +37,8 @@ jobs:
     
           git checkout gh-pages || git checkout --orphan gh-pages
 
+          git pull origin gh-pages --rebase
+
           cp reports/test_report.html reports/index.html
           
           git add reports/index.html
