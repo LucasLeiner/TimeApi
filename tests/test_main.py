@@ -1,9 +1,9 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../Api/")))
 
-from TimeApi.Api.main import app
+from main import app
 from fastapi.testclient import TestClient
 
 client = TestClient(app)
