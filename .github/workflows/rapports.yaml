@@ -20,7 +20,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run Tests
-        run: pytest --html=reports/test_report.html --self-contained-html
+        run: pytest --html=reports/test_report.html --self-contained-html --rootdir=/home/runner/work/TimeApi/
 
       - name: Upload Test Report
         uses: actions/upload-artifact@v3
