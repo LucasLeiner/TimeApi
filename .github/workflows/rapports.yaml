@@ -36,9 +36,9 @@ jobs:
           git fetch --all
           git checkout main
 
-          cp reports/test_report.html docs/test_report.html
+          cp reports/test_report.html docs/results.html
           
-          git add docs/test_report.html
+          git add docs/results.html
           git commit -m "Ajout du rapport de test HTML"
           git push origin main
         env:

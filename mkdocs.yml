@@ -12,6 +12,6 @@ nav:
   - Documentation:
       - Introduction: introduction.md
       - Setup Guide: setup.md
-      - Test Results: test_report.html
+      - Test Results: results.html
 
 docs_dir: docs
