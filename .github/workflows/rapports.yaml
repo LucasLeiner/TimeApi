@@ -41,9 +41,9 @@ jobs:
 
           git pull origin gh-pages --rebase
 
-          cp reports/test_report.html results.html
+          cp reports/test_report.html docs/results.html
           
-          git add results.html
+          git add docs/results.html
           git commit -m "Ajout du rapport de test HTML"
           git push origin gh-pages
         env:
