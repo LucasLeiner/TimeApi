@@ -25,7 +25,7 @@ jobs:
         run: |
           # Installe pytest-html pour générer un rapport HTML
           pip install pytest-html
-          pytest --html=reports/test_report.html
+          pytest --html=reports/test_report.html --self-contained-html
 
       - name: Commit and push the HTML report to main
         run: |
